@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<style>
+hr {color:sienna;}
+p {
+margin-left:60px;
+margin-right:60px;
+}
+body {background-image:url("images/back40.gif");}
+</style>
+
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+</head>
+
+<style>
+.right-align {
+    float: right;
+    margin-left: 10px;
+    ul.a {list-style-type:circle;}
+  }
+</style>
+
+
+  <body>
+    <h1 style="color:rgb(200,0,0)"><b>Rakuten</b></h1>
+    <p class="a">日本語	English	簡体中文</p>
+    <hr style="border: 2px solid rgb(200,0,0);">
+    <p style="background-color:	rgb(232,232,232) ">
+    セキュリティ対策を見直しませんか？ 詳細は<a href="file:///C:/Users/user/Desktop/demo1.html">こちら</a>
+    <img src="file:///C:/Users/user/Desktop/zhao/%E5%9B%BE%E7%89%87_20230926195022.png" alt="stop_540x249." class="right-align">
+    <br>
+    楽天IDログイン時に送信される通知メールについて 詳細は<a href="file:///C:/Users/user/Desktop/demo2.html">こちら</a>
+    </br>
+    </p>
+    
+ 
+    <table border="1">
+    <tr>
+    <td>Row 1, cell a</td>
+    <td>Row 1, cell 2</td>
+    <p style="background-color:#FFFFFF">
+    </tr>
+    
+    
+    
+    
+    <ul class="a">
+ 		 <li>Coffee</li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
