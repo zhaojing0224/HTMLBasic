@@ -27,7 +27,7 @@ body {background-image:url("images/back40.gif");}
 
   <body>
     <h1 style="color:rgb(200,0,0)"><b>Rakuten</b></h1>
-    <p class="a">日本語	English	簡体中文</p>
+    <p class="a">日本語|English|簡体中文</p>
     <hr style="border: 2px solid rgb(200,0,0);">
     <p style="background-color:	rgb(232,232,232) ">
     セキュリティ対策を見直しませんか？ 詳細は<a href="file:///C:/Users/user/Desktop/demo1.html">こちら</a>
@@ -45,25 +45,85 @@ body {background-image:url("images/back40.gif");}
     <p style="background-color:#FFFFFF">
     </tr>
     
-    
+    <!--これは注釈//-->
+    <h2>&#128514;</h2>
     
     
     <ul class="a">
  		 <li>Coffee</li>
     
+    <style>
+    div{
+    	width: 150px;
+    	border: 4px solid lightgrey;
+    	padding: 150px;
+    	margin: 5px;
+    }
     
     
+    p.double 
+    {
+     width: 500px;
+   	 border-style: double; 
+   	 border-color: grey;
+   	 padding: 25px;
+   	 margin: 5px;
+    }
     
+    </style>
     
+    <body>
+    <div></div>    
+    <p class="double">
+    <br></br>
+    </p>
+    <img src="C:\Users\user\Desk" alt="図" width="42" height="42">
+    <br></br>
+    <button type="button" onclick="alert('歓迎！')">クリック！</button>
     
+    </body>
     
+    <!--<script>
+    alert("私のJavaScript");
+    </script>-->
     
-    
-    
-    
-    
+    <br></br>
+    document.write("<h3>これは段落</h3>");
+    <br></br>
     
   </body>
+  
+  <head>
+  	<title>getElementsByName Example</title>
+  </head>
+  
+  <body>
+  	<form>
+  		<button onclick="getElements()">要素の取得</button>
+  		<br>
+  		<input type="text" name="username">
+  		<input type="text" name="password">
+  		</br>
+  	</form>
+  	
+  	<script>
+  	 function getElements(){
+  	 	var elements = document.getElementsByName('username');
+  	 	for (var i = o; i < elements.length; i++){
+  	 		console.log(elements[i].value);
+  	 	}
+  	}
+  	</script>
+  	
+  	<h4>画面</h4>
+  	<p id="demo">段落。</p>
+  	<script>
+  	document.getElementById("demo").innerHTML="段落を編集した。"
+  	</script>
+  	
+  	
+  </body>
+  
 </html>
 
 
