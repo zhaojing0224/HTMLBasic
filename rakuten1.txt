@@ -888,7 +888,7 @@ table.address {
 <td>
 <em><半角英数字><br>
 他の会員が登録済みのメールアドレスは登録できません。<br>
-<input id="email" class="text" type="email" name="email"onclick="emailtFunction()"><br>
+<input id="email" class="text" type="email" name="email"onclick="emailFunction()"><br>
 </td>
 <script>
 
@@ -931,15 +931,6 @@ function emailFunction()
 </th>
 </tr>
 
-<script>
-
-
-
-
-</script>
-
-
-
 
 
 
@@ -954,14 +945,46 @@ function emailFunction()
 <input type="radio" id="igai" name="check" value="on">
 <label for="igai">メールアドレス以外をユーザIDとして使用</label><br>    
 <6文字以上・半角英数字> 数字だけにすることはできません<br>
+
 <div id="user"><input type="text" name="u" maxlength="100" size="50" value="" class="text userid" title="(例) rakuten1234"></div>
 <img class="userIderror" src="./images/arrow32.gif" width="32" height="11" alt="">
+
 
 </em>
 </td>
 <td class="end"><a href="">詳しいヘルプ</a></td>
 </th>
 </tr>
+
+<script>
+
+function idFunction() {
+  var idValue = document.querySelector('#user input').value;
+  var regexID = /^[a-zA-Z0-9]{6,}$/;
+  var isValidId = regexID.test(idValue);
+
+  var idError = document.querySelector('.userIderror');
+  var idErrorMessage = document.querySelector('.userIderrormes');
+
+  if (!isValidId) {
+    idError.style.display = 'inline-block';
+    idErrorMessage.textContent = '&lt;6文字以上・半角英数字&gt; 数字だけにすることはできません';
+  } else {
+    idError.style.display = 'none';
+    idErrorMessage.textContent = '';
+  }
+}
+</script>
+
+<img class="iderror" src="./images/arrow32.gif" width="32" height="11" alt="">
+<span class="iderrormes" style="color: #ff0000; font-weight: bold;"></span><br>
+
+
+
+
+<img class="iderror" src="./images/arrow32.gif" width="32" height="11" alt="">
+<span class="iderrormes" style="color: #ff0000; font-weight: bold;"></span><br>
+
 
 
 
@@ -1032,11 +1055,9 @@ function emailFunction()
 </p>
 
 <p class="submit">
-
-<input type="submit" name="execMethod" value="同意して次へ" onclick="nextFunction();">
-
-
+    <input type="button" value="同意して次へ" onclick="validateAndProceed()">
 </p>
+
 
 </form>
 
@@ -1060,19 +1081,61 @@ function emailFunction()
 
 
 <script>
+function validateAndProceed() {
+    var isValidEmail = validateEmail('email');
+    var isValidId = validateId('user');
+    var isValidPassword = validatePassword('p_id');
+    var isValidFirstName = validateName('sei', 'seiKata');
+    var isValidLastName = validateName('mei', 'meiKata');
 
-function nextFunction() 
-{
-    alert(9999);
+    if (isValidEmail && isValidId && isValidPassword && isValidFirstName && isValidLastName) {
+        window.location.href = 'https://grp01.id.rakuten.co.jp/rms/nid/registfwd?service_id=top';
+    }
 }
 
+function validateEmail(elementId) {
+    var emailValue = document.getElementById(elementId).value;
+    var regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!regexEmail.test(emailValue)) {
+        alert('メールアドレスの形式が正しくありません。');
+        return false;
+    }
+    return true;
+}
 
+function validateId(elementId) {
+    var idValue = document.querySelector('#' + elementId + ' input').value;
+    var regexID = /^[a-zA-Z0-9]{6,}$/;
+    if (!regexID.test(idValue)) {
+        alert('ユーザIDは半角英数字で6文字以上入力してください。');
+        return false;
+    }
+    return true;
+}
 
+function validatePassword(elementId) {
+    var passwordValue = document.getElementById(elementId).value;
+    if (passwordValue.length < 6) {
+        alert('パスワードは6文字以上で入力してください。');
+        return false;
+    }
+    return true;
+}
 
+function validateName(firstNameId, lastNameId) {
+    var isValidFirstName = validateKana(firstNameId);
+    var isValidLastName = validateKana(lastNameId);
 
+    return isValidFirstName && isValidLastName;
+}
+return true;
 
 
 </script>
+
+
+
+
 
 </body>
 </html>
